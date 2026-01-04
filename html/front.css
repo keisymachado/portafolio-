@@ -6,11 +6,6 @@
 
 }
 
-#navbar {
-   
-background-color: #000;
- 
-}
 
 
 #menu  a {
@@ -27,7 +22,7 @@ background-color: #000;
 
   margin: 10px;
   margin-top: 20px;
-  
+  margin-left: -500px;
  
 }
 
@@ -54,45 +49,16 @@ background-color: #000;
   width: 100vh;
   margin: -80px ;
   align-items: center;
-  #navbar {
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 20px;
-  }
+  background-position: center
+}
 
-  #menu a {
-    color: #fff;
-    padding: 10px 14px;
-    text-decoration: none;
-  }
 
-  .nav {
-    margin: 10px;
-    margin-top: 20px;
-  }
 
-  #menu {
-    list-style: none;
-    margin: 0;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
 
-   #logo a {
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    text-decoration: none;
-  } 
-
-  .imagen1 img {
-    width: auto;
-    max-height: 140px;
-    margin: 0;
-    object-fit: contain;
-  }
+#navbar {
+   
+display: flex;
+justify-content: center;
+align-items: center;
+ 
+}
