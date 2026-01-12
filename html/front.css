@@ -2,58 +2,76 @@
    font-family: 'Nunito Sans', sans-serif;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  color: rgb(4, 4, 4)
+  ;
+  
  
 
 }
 
-
-
-#menu  a {
+ .navbar ul li a {
   
-  color: #000;
-  text-decoration: none;
-  
-}
-
-.nav {
-
-   margin-top: 4vh;
-
-}
-
-#menu {
   list-style: none;
-  flex-direction: column;
+  display: block;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: center;
+  
+ 
+ }
+
+ .logo a {
+    
+    color: rgb(99, 21, 21);
+    font-weight: bold;
+    font-size: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+  }
+
+.menu1  {
+  
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3vh 0 -6vh 10vh ;  
+  flex-direction: column;
+  margin-left: 50px;
+  
+}
+
+.menu1 li {
+  
+  list-style: none;
+  border-bottom: 1px solid black;
+  border-radius: 30px;
+  margin: 10px;
+  transition: 0.9s;
+  max-width: 100%;
+}
+.menu1 li:hover{
+  background-color: rgb(208, 203, 203);
+  color: #ffffff;
+  cursor: pointer;
+  width: 160px;
 }
 
 
+.limpiar {
+  float: none;
+  clear: both;
+}
 
- #logo a {
-  font-size: 5vh;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-
-  
-} 
-
-.imagen1 img {
-  width: 90vh;
+.imagen1 img{
+  width: 700px;
   margin :0 auto;
   display: block;
-  margin-top: -30vh;
+  margin-top: -50vh;
+  /* position: relative; */
+  pointer-events: none; /* Evita que la imagen interfiera con otros elementos interactivos */
+
 }
 
-
-#navbar {
-  margin-top: px; 
-display: flex;
-justify-content: center;
-align-items: center;
- 
-} 
 
