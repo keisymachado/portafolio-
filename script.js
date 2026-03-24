@@ -131,3 +131,72 @@ if (galleryImages.length && lightbox) {
     }
   });
 }
+
+const contactForm = document.querySelector(".contact-form");
+
+if (contactForm) {
+  const statusElement = document.createElement("div");
+  statusElement.className = "form-status";
+  contactForm.appendChild(statusElement);
+
+  let statusTimeout;
+
+  const showStatus = (message, type) => {
+    statusElement.textContent = message;
+    statusElement.classList.remove("success", "error", "is-visible");
+    if (type) {
+      statusElement.classList.add(type);
+    }
+    statusElement.classList.add("is-visible");
+    if (statusTimeout) {
+      clearTimeout(statusTimeout);
+    }
+    statusTimeout = setTimeout(() => {
+      statusElement.classList.remove("is-visible");
+    }, 6000);
+  };
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const nombre = String(formData.get("nombre") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const mensaje = String(formData.get("mensaje") || "").trim();
+
+    if (!nombre || !email || !mensaje) {
+      showStatus("Por favor completa todos los campos.", "error");
+      return;
+    }
+
+    try {
+      const payload = new FormData();
+      payload.append("nombre", nombre);
+      payload.append("email", email);
+      payload.append("mensaje", mensaje);
+
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: payload,
+      });
+
+      const data = await response.json().catch(() => ({}));
+      const message = data.message || "Mensaje enviado correctamente";
+
+      if (!response.ok) {
+        console.error("Error en el env\u00edo:", data);
+        showStatus(message, "error");
+        return;
+      }
+
+      showStatus(message, "success");
+      contactForm.reset();
+    } catch (error) {
+      console.error("Error enviando el mensaje:", error);
+      showStatus("No se pudo enviar el mensaje. Intenta de nuevo.", "error");
+    }
+  });
+}
