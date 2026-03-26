@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="images/art17.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="page page-home">
@@ -38,7 +39,13 @@
       <section class="hero home-hero" data-reveal>
         <div class="hero-grid">
           <div class="hero-image">
-            <img src="images/art17.png" alt="Ilustraci&oacute;n destacada" loading="lazy" />
+            <img
+              src="images/art17.png"
+              alt="Ilustraci&oacute;n destacada"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
           </div>
           <div class="hero-copy">
             <p class="eyebrow">Portafolio de ilustraci&oacute;n</p>
@@ -70,13 +77,28 @@
         </div>
         <div class="mini-collage">
           <figure class="mini-card">
-            <img src="images/art3.png" alt="Ilustraci&oacute;n 4" loading="lazy" />
+            <img
+              src="images/art3.png"
+              alt="Ilustraci&oacute;n 4"
+              loading="lazy"
+              decoding="async"
+            />
           </figure>
           <figure class="mini-card tall">
-            <img src="images/art9.png" alt="Ilustraci&oacute;n 12" loading="lazy" />
+            <img
+              src="images/art9.png"
+              alt="Ilustraci&oacute;n 12"
+              loading="lazy"
+              decoding="async"
+            />
           </figure>
           <figure class="mini-card">
-            <img src="images/art6.png" alt="Ilustraci&oacute;n 7" loading="lazy" />
+            <img
+              src="images/art6.png"
+              alt="Ilustraci&oacute;n 7"
+              loading="lazy"
+              decoding="async"
+            />
           </figure>
         </div>
         <div class="preview-cta">

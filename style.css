@@ -853,11 +853,16 @@ h2 {
   }
 
   .collage {
-    column-count: 1;
+    column-count: 2;
+    column-gap: 12px;
   }
 
   .art-card.featured {
     column-span: all;
+  }
+
+  .art-card {
+    margin-bottom: 12px;
   }
 }
 
